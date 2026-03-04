@@ -2,10 +2,6 @@
 
 # Full-Atom Peptide Design via Riemannian–Euclidean Bayesian Flow Networks
 
-**Official Repository (WIP)**  
-**AAAI 2026**
-
-[![Status](https://img.shields.io/badge/status-work%20in%20progress-yellow.svg)]()
 [![Conference](https://img.shields.io/badge/AAAI-2026-blue.svg)]()
 [![License](https://img.shields.io/badge/license-Apache--2.0-green.svg)]()
 
@@ -15,44 +11,77 @@
 
 ## 🧬 Overview
 
-This repository will host the **official implementation** of our AAAI 2026 paper:
+This repository hosts the **official implementation** of our AAAI 2026 paper:
 
-> **Full-Atom Peptide Design via Riemannian–Euclidean Bayesian Flow Networks**  
-> *Hao Qian, Shikui Tu, Lei Xu*  
-> Shanghai Jiao Tong University & Guangdong Laboratory of Artificial Intelligence and Digital Economy (SZ)
+📄 **Full-Atom Peptide Design via Riemannian-Euclidean Bayesian Flow Networks**  
+🔗 [Paper (arXiv)](https://arxiv.org/pdf/2511.14516)
+---
 
-We are currently organizing and cleaning up the codebase.  
-**Model code, training scripts, evaluation pipelines, and pre-trained checkpoints will be released here.**
+## 📦 Data
 
-Stay tuned by starring ⭐ the repo to follow updates.
+To facilitate the reproducibility of our results, we provide the **dataset**, **pretrained models**, and **generated peptides** used in the paper.
+
+All resources are available at:
+
+**Zenodo:** https://doi.org/10.5281/zenodo.18857171
 
 ---
 
-## 📂 Repository Roadmap
+## ⚙️ Environment
 
-We are in the process of preparing the following components:
-
-- [ ] Core Riemannian–Euclidean Bayesian flow network implementation  
-- [ ] Training scripts and configuration examples  
-- [ ] Evaluation and benchmarking scripts  
-- [ ] Pre-trained models and example outputs  
-- [ ] Documentation and usage tutorials (Jupyter/Colab)
-
-The checklist above will be updated as items are released.
-
----
-
-## 🔧 Getting Started (Coming Soon)
-
-This section will include:
-
-- Environment setup and dependencies  
-- Installation instructions  
-- Minimal working example for peptide design  
-- Tips for reproducing results from the paper  
+Create the conda environment using:
 
 ```bash
-# Placeholder: setup commands will be provided here
-# e.g.,
-# conda env create -f environment.yml
-# python train.py --config configs/example.yaml
+conda env create -f environment.yml
+```
+
+Then activate it:
+
+```bash
+conda activate peptide
+```
+
+---
+
+## 🚀 Training
+
+Run the following command to train the model:
+
+```bash
+python train_bfn.py
+```
+
+---
+
+## 🧪 Testing
+
+To evaluate a trained checkpoint:
+
+```bash
+python train_bfn.py --config CONFIG_PATH --test_only --test_ckpt_path CHECKPOINT_PATH
+```
+
+---
+
+## 📊 Evaluation
+
+Run the evaluation script:
+
+```bash
+bash train_eval.sh ROOT_DIR
+```
+
+---
+
+## 📜 Citation
+
+If you find this work useful, please cite:
+
+```bibtex
+@article{qian2025full,
+  title={Full-Atom Peptide Design via Riemannian-Euclidean Bayesian Flow Networks},
+  author={Qian, Hao and Tu, Shikui and Xu, Lei},
+  journal={arXiv preprint arXiv:2511.14516},
+  year={2025}
+}
+```
